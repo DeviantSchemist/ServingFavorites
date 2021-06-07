@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/DeviantSchemist/ServingFavorites/issues"
   },
-  "homepage": "https://github.com/DeviantSchemist/ServingFavorites#readme"
+  "homepage": "https://github.com/DeviantSchemist/ServingFavorites#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
