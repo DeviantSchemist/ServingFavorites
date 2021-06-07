@@ -1,32 +1,27 @@
-const http = require('http')
+const express = require('express')
+const { join } = require('path')
+const app = express()
 
-const server = http.createServer((req, res) => {
-  switch(req.url) {
-    case '/movies':
-      res.end(`
-      <h1>Fave Movies</h1>
-      <ul>
-        <li>Bruh</li>
-      </ul>
-      `)
-      break
-    case '/songs':
-      res.end(`
-      <h1>Fave Songs</h1>
-      <ul>
-        <li>Bruh</li>
-      </ul>
-      `)
-      break
-    case '/foods':
-      res.end(`
-      <h1>Fave Foods</h1>
-      <ul>
-        <li>Bruh</li>
-      </ul>
-      `)
-      break
-  }
+app.get('/', (req, res) => {
+  res.sendFile(join(__dirname, 'index.html'))
 })
 
-server.listen(3000, () => console.log('Server is running...'))
+app.get('/movies', (req, res) => {
+  res.send('Goodfellas and The Room')
+})
+
+app.get('/songs', (req, res) => {
+  res.send('Song 1 and Song 2')
+})
+
+// app.post('/movies', (req, res) => {
+
+// })
+// app.put('/movies', (req, res) => {
+
+// })
+// app.delete('/movies', (req, res) => {
+
+// })
+
+app.listen(3000)
